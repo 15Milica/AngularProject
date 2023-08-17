@@ -1,0 +1,5 @@
+<div class="glavni">
+<ul *ngFor="let auto of automobili | async">
+  <app-automobil-card [automobil]="auto"></app-automobil-card>
+</ul>
+</div>

@@ -1,0 +1,34 @@
+<div *ngIf="auto">
+<h2 mat-dialog-title>{{auto.marka}} {{auto.model}}</h2>
+<mat-dialog-content class="mat-typography">
+<img src = {{auto.slika}} class="slika"/>
+<div class ="icons">
+<div class="icon">
+<fa-icon [icon] = "iconCar"></fa-icon>
+<p>{{auto.marka}}</p>
+</div>
+<div class="icon">
+<fa-icon [icon] = "iconCalendar"></fa-icon>
+<p>Godina: {{auto.godina}}</p>  
+</div>
+<div class="icon">
+<fa-icon [icon] = "iconGauge" class="gauge"></fa-icon>
+<p>KM: {{auto.kilometar}}</p>  
+</div>                                  
+</div>
+<h3>SPECIFIKACIJE</h3>
+<h4>{{auto.specifikacije}}</h4>
+</mat-dialog-content>
+<mat-dialog-actions class="ocene">
+<div class="divLike" (click)="oceni()">
+<div class="divHover">
+<fa-icon [icon]="iconLike" class="likeIcon"></fa-icon>
+</div>
+<p>{{auto.like}}</p>
+</div>
+<div>
+<button mat-button mat-dialog-close>Nazad</button>
+</div>
+</mat-dialog-actions>
+</div>
+                                                  

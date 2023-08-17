@@ -1,0 +1,39 @@
+.icons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.icons
+{
+    display: flex;
+    flex-direction: row;
+}
+h3{
+    color: black;  
+}
+h2{
+    text-align: center;
+}
+.slika
+{
+    width:350px;
+}
+.ocene
+{
+    display: flex;
+    justify-content: space-between;
+}
+.divLike
+{
+    display: flex;
+    flex-direction: row;
+}
+.likeIcon
+{
+    margin-right: 10px; 
+}
+.divHover:hover
+{
+    cursor: pointer;
+}

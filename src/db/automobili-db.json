@@ -1,0 +1,70 @@
+{
+"automobili": [
+  {
+    "id": 1,
+    "marka":"FIAT 500", 
+    "model": "CABRIO SPORT", 
+    "godina":2022,
+    "kilometar":25000,
+    "specifikacije":"Redni broj: 12 / / Prenos: manuel / / Pogon: Fwd / / Vrsta goriva: dizel",
+    "cena":50, 
+    "like": 10,
+    "slika":"http://limorentacar.me/components/com_vehiclemanager/photos/3D064BCD-97EB-75A0-94B4-DEBF2F27FC3A_fiat-500-cabrio-sport_369_200_1_.jpg"
+  },
+  {
+    "id": 2,
+    "marka":"BMW X4", 
+    "model": "M SPORT 20D 190HP", 
+    "godina":2021,
+    "kilometar":25000,
+    "specifikacije":"Redni broj: 19 / / Prenos: automatic / / Pogon: 4wd / / Vrsta goriva: dizel",
+    "cena":200, 
+    "like":20,
+    "slika":"http://limorentacar.me/components/com_vehiclemanager/photos/11D24553-AE26-068F-BA2C-3BDECB500AD6_bmw_369_200_1_.jpg"
+  },
+  {
+    "id": 3,
+    "marka":"VW PASSAT", 
+    "model": "2.0 TDI NAVI", 
+    "godina":2021,
+    "kilometar":20000,
+    "specifikacije":"Redni broj: 18 / / Prenos: automatic / / Pogon: Fwd / / Vrsta goriva: dizel",
+    "cena":95, 
+    "like":15,
+    "slika":"http://limorentacar.me/components/com_vehiclemanager/photos/6560A71F-5112-F642-2A9E-A44E2F9BBFBB_vw-passat-2-0-tdi-navi_369_200_1_.jpg"                                        
+  },
+  {
+    "id": 4,
+    "marka":"AUDI Q7", 
+    "model": "TDI S LINE 286HP 4x4", 
+    "godina":2020,
+    "kilometar":30000,
+    "specifikacije":"Redni broj: 09 / / Prenos: automatic / / Pogon: 4wd / / Vrsta goriva: dizel",
+    "cena":250, 
+    "like":18,
+    "slika":"http://limorentacar.me/components/com_vehiclemanager/photos/F8FD7615-B3CC-DA16-B06D-21F0D05836DF_audi-q7-tdi-s-line-286hp-4x4_369_200_1_.jpg"                                         
+  },
+  {
+     "id": 5,
+     "marka": "MB S 400D",
+     "model": "LONG AMG",
+     "godina": 2022,
+     "kilometar": 10000,
+     "specifikacije":"Redni broj: 14 / / Prenos: automatic / / Pogon: 4wd / / Vrsta goriva: dizel",
+     "cena":450,
+     "like": 12,
+     "slika":"http://limorentacar.me/components/com_vehiclemanager/photos/CCCD12EE-3480-7737-5DFB-EBCF85A17EF6_mb-s-400d-long-amg_369_200_1_.jpg"
+  },
+  {
+     "id": 6,
+     "marka": "Citroen",
+     "model": "C4",
+     "godina": 2019,
+     "kilometar": 15000,
+     "specifikacije":"Redni broj: 17 / / Prenos: manuel / / Pogon: Fwd / / Vrsta goriva: dizel",
+     "cena":50,
+     "like":5,
+     "slika":"https://www.rentacaratos.com/assets/img/automobili/rent-a-car-beograd-atos-citroen-c4.jpg"
+  }
+]
+}
