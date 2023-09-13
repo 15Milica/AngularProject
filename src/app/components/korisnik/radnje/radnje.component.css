@@ -1,0 +1,14 @@
+.radnje {
+     display: flex;
+     flex-wrap: wrap;
+     width: 90%;
+     max-width: 700px;
+     justify-content: space-around;
+     margin: 20px auto;
+ }
+ 
+ 
+ .radnja {
+     width: 300px;
+     margin-bottom: 20px;
+ }

@@ -1,3 +1,7 @@
+import { Iznajmljivanje } from "./iznajmljivanje";
+import { Like } from "./like";
+import { Radnja } from "./radnja";
+import { SlikaAutomobila } from "./slikaAutomobila";
 
 export interface Automobil
 {
@@ -5,9 +9,10 @@ export interface Automobil
    marka: string,
    model: string, 
    godina: number,
-   kilometar: number, 
    specifikacije: string,
    cena: number, 
-   like: number,
-   slika: string
+   radnja: Radnja | undefined,
+   likes: Like[] | undefined,
+   slike: SlikaAutomobila[] | undefined,
+   iznajmljivanje: Iznajmljivanje[] | undefined
 }

@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "api": "json-server ./src/db/automobili-db.json --watch"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +27,7 @@
     "@ngrx/entity": "^14.1.0",
     "@ngrx/store": "^14.1.0",
     "@ngrx/store-devtools": "^14.1.0",
+    "cors": "^2.8.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

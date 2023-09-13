@@ -1,0 +1,21 @@
+<h1 class="hIznajmljivanja">Vasa iznajmljivanja</h1>
+<mat-card *ngFor="let iznajmljivanje of iznajmljivanja | async" class="iznajmljivanjeUprosceno">
+    <mat-card-header>
+        <mat-card-title>
+            {{iznajmljivanje.vozilo}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            Status: {{status(iznajmljivanje)}}
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="iznajmljivanje.zavrseno" >
+            {{"Ukupna cena za "+ iznajmljivanje.dana+" dana je " + iznajmljivanje.cenaUkupna+" din"}}
+        </mat-card-subtitle>
+        
+        <mat-card-subtitle *ngIf="!iznajmljivanje.zavrseno">
+            {{"Rok za vracanje automobila je "+this.rokZaVracanje(iznajmljivanje) +"."}}
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="kasni(iznajmljivanje) < 0 && !iznajmljivanje.zavrseno" style="color: red">
+            {{"Kasnite sa vracanjem automobila "+ (kasni(iznajmljivanje)*-1)+" dana."}}
+        </mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

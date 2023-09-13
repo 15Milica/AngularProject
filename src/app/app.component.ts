@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from './store/app-state';
-import { ucitajAutomobile } from './store/automobili.actions';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +8,8 @@ import { ucitajAutomobile } from './store/automobili.actions';
 })
 export class AppComponent {
   title = 'app-rent';
-  constructor(private store: Store<AppState>){
+  constructor(){
   }
   ngOnInit(){
-     this.store.dispatch(ucitajAutomobile());
   }
 }

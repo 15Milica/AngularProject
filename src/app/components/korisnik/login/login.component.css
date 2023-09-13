@@ -1,0 +1,9 @@
+.formaKorisnikLogin{
+     display: flex;
+     flex-direction: column;
+     max-width: 300px;
+     width: 90%;
+     margin: 70px auto;
+     height: 300px;
+     justify-content: space-evenly;
+ }
