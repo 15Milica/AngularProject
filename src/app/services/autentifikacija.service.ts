@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Korisnik } from '../models/korisnik';
 import { environment } from 'src/environments/environment';
+import { Admin } from '../models/admin';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AutentifikacijaService {
   constructor(private httpClient:HttpClient) { }
 
   validirajKorisnika() : Observable<Korisnik> {
-    return this.httpClient.get<Korisnik>(environment.apiURL+"auten",{withCredentials:true});
+    return this.httpClient.get<Korisnik>(environment.apiURL+"auth",{withCredentials:true});
   }
 
   loginKorisnika(email: string, lozinka: string) : Observable<Korisnik> {
@@ -27,4 +28,16 @@ export class AutentifikacijaService {
     return this.httpClient.post<Korisnik>(environment.apiURL+"auth/register",korisnik,{withCredentials:true})
                 .pipe(map(x=><Korisnik>x))
   } 
+  
+  validirajAdmina() : Observable<Admin>{
+    return this.httpClient.get<Admin>(environment.apiURL+"auth-admin/Validiraj",{withCredentials:true});
+  }
+
+  loginAdmin(email: string, lozinka: string) : Observable<Admin> {
+    return this.httpClient.post<Admin>(environment.apiURL+"auth-admin/log-in",{email,lozinka},{withCredentials:true}).pipe(map(x=><Korisnik>x))
+  }
+
+  logOutAdmin() {
+    return this.httpClient.post(environment.apiURL+"auth-admin/log-out",null,{withCredentials:true,responseType:"text"});
+  }
 }

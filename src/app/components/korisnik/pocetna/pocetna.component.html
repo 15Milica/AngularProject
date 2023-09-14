@@ -1,14 +1,14 @@
 <mat-toolbar  color="primary">
    <mat-toolbar-row>
      <h1>MSRent</h1>
-     <button mat-button color="white" routerLink="Pocetna" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Početna</button>
+     <button mat-button color="white" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Početna</button>
      <button mat-button color="white" routerLink="Login" routerLinkActive="active" *ngIf="!logedin">Login</button>
      <button mat-button color="white" *ngIf="logedin" (click) = "logout()">Logout</button>
-     <button mat-button color="white" routerLink="Profile" routerLinkActive="active" *ngIf="logedin">Profil</button>
+     <button mat-button color="white" routerLink="Profil" routerLinkActive="active" *ngIf="logedin">Profil</button>
      <button mat-button color="white" routerLink="Radnje" routerLinkActive="active">Radnje</button>
    </mat-toolbar-row>
-   </mat-toolbar>
-   <router-outlet></router-outlet>
+</mat-toolbar>
+<router-outlet></router-outlet>
 <img src = "https://wallpaper.dog/large/10986786.jpg">
 <h1>Zašto da odaberete MSRent?</h1>
 <div class="glavni">

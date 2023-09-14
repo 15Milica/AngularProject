@@ -20,15 +20,13 @@ export class LoginComponent implements OnInit {
   })
 
   login(){
-    const email = this.loginForm.value.email!;
-    const lozinka = this.loginForm.value.lozinka!;
-
+    let email = this.loginForm.value.email!;
+    let lozinka = this.loginForm.value.lozinka!;
     this.store.dispatch(loginKorisnika({email: email, lozinka:lozinka}));
     let i = 0;
     this.store.select('korisnikState').subscribe(x=>{
       if(x.korisnik!= null) this.router.navigateByUrl("/")
     })
-
   }
   ngOnInit(): void {
   }

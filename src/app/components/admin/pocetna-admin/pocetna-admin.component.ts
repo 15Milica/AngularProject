@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { appState } from 'src/app/state/appState';
+import { logoutAdmin } from 'src/app/state/korisnik/korisnik.action';
+import { adminSelector } from 'src/app/state/korisnik/korisnik.selector';
+import { korisnikState } from 'src/app/state/korisnik/korisnikState';
 
 @Component({
   selector: 'app-pocetna-admin',
@@ -7,9 +14,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PocetnaAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store:Store<appState>, private router:Router) { }
+  logedin: boolean = false;
 
   ngOnInit(): void {
+    this.store.select("korisnikState").subscribe(x=>{
+      if(x.korisnik != null){
+        this.logedin = true;
+
+      }else this.logedin = false;
+    })
+  }
+  logout(){
+    this.store.dispatch(logoutAdmin())
+    let s = this.store.select("korisnikState").subscribe(x=>{
+      if(x.korisnik == null){
+        this.router.navigateByUrl("/admin");
+        s.unsubscribe();
+      }
+    })
   }
 
 }

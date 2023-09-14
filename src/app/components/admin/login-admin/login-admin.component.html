@@ -1,1 +1,11 @@
-<p>login-admin works!</p>
+<form [formGroup]="loginForm" class="formaAdminLogin">
+     <mat-form-field>
+         <input formControlName="email" placeholder="email"  matNativeControl>
+     </mat-form-field>
+     <mat-form-field>
+         <input formControlName="lozinka" type="password" placeholder="lozinka" matNativeControl>
+     </mat-form-field>
+     <button (click)="login()" mat-raised-button color="primary">Login</button>
+     
+     <a mat-raised-button color="accent" routerLink="../Registracija">Registruj Se</a>
+ </form>

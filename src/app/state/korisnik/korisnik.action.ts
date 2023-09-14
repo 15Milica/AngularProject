@@ -1,7 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import { Korisnik } from "src/app/models/korisnik";
-
-
+import { Admin } from "src/app/models/admin";
 
 let validirajKorisnika = createAction("ValidirajKorisnika")
 
@@ -25,7 +24,26 @@ let registracijaKorisnik = createAction("RegistracijaKorisnik", props<Korisnik>(
 
 let registracijaKorisnikFail = createAction("RegistracijaKorisnikFail")
 
+let loginAdmin = createAction("loginAdmin", props<{email:string,lozinka:string}>())
 
+let loginAdminSuccess = createAction("loginAdminSucces", props<Admin>())
+
+let loginAdminFail = createAction("loginAdminFail");
+
+let logoutAdmin = createAction("LogoutAdmin")
+
+let logoutAdminSuccess = createAction("LogoutAdminSuccess");
+
+let logoutAdminFail = createAction("LogoutAdminFail")
+
+let validirajAdmina = createAction("ValidirajAdmina")
+
+let validirajAdminaSuccess = createAction("ValidirajAdminaSucces", props<Admin>())
+
+let validirajAdminaFail = createAction("ValidirajAdminaFail");
+
+export {logoutAdmin, logoutAdminSuccess, logoutAdminFail, validirajAdmina, validirajAdminaSuccess, validirajAdminaFail}
+export {loginAdmin, loginAdminSuccess, loginAdminFail}
 export {registracijaKorisnik,registracijaKorisnikFail}
 export {loginKorisnika,loginKorisnikaFail,loginKorisnikaSuccess}
 export {logoutKorisnik, logoutKorisnikSuccess,logoutKorisnikFail}

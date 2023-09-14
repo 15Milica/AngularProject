@@ -4,7 +4,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { AutentifikacijaService } from 'src/app/services/autentifikacija.service';
-import { validirajKorisnika, validirajKorisnikaFail, validirajKorisnikaSuccess, loginKorisnika,loginKorisnikaSuccess, loginKorisnikaFail, registracijaKorisnik, registracijaKorisnikFail, logoutKorisnikSuccess, logoutKorisnikFail} from './korisnik.action';
+import { validirajKorisnika, validirajKorisnikaFail, validirajKorisnikaSuccess, loginKorisnika,loginKorisnikaSuccess, loginKorisnikaFail, registracijaKorisnik, registracijaKorisnikFail, logoutKorisnikSuccess, logoutKorisnikFail, validirajAdmina, validirajAdminaSuccess, validirajAdminaFail, loginAdmin, loginAdminSuccess, loginAdminFail, logoutAdmin, logoutAdminSuccess, logoutAdminFail} from './korisnik.action';
 import { logoutKorisnik } from './korisnik.action';
  
 @Injectable()
@@ -67,6 +67,49 @@ export class KorisnikEffects {
                                    return of(registracijaKorisnikFail())})
                          )
                     }
+               )
+          )
+     );
+
+     validirajAdmina$ = createEffect(() =>
+     this.actions$.pipe(
+               ofType(validirajAdmina),
+               mergeMap(() => this.autenService.validirajAdmina()
+                    .pipe(
+                         map(admin => (validirajAdminaSuccess(admin))),
+                         catchError(() => of(validirajAdminaFail()))
+                    )
+               )
+          )
+     );
+
+     loginAdmin$ = createEffect(() =>
+     this.actions$.pipe(
+               ofType(loginAdmin),
+               mergeMap(({email,lozinka}) => this.autenService.loginAdmin(email,lozinka)
+               .pipe(
+                    map(admin => (loginAdminSuccess(admin))),
+                    catchError((err:HttpErrorResponse) => {
+                              console.log(err)
+                              alert(err.error.message);
+                              return of(loginAdminFail())
+                         })
+                    )
+               )
+          )
+     );
+
+     logoutAdmin$ = createEffect(() =>
+          this.actions$.pipe(
+          ofType(logoutAdmin),
+          mergeMap(() => this.autenService.logOutAdmin()
+               .pipe(
+               map(() => {
+                    return (logoutAdminSuccess())}),
+                         catchError((x) => {
+                         console.log(x)
+                         return of(logoutAdminFail())})
+                    )
                )
           )
      );
