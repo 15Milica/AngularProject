@@ -1,0 +1,10 @@
+.pretragaVozilaRadnik {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin-top: 10px;
+ }
+ 
+ .svaVozilaPretragaForm {
+     text-align: center;
+ }

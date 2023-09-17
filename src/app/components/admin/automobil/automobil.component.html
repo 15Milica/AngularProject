@@ -1,0 +1,22 @@
+<mat-card class="kartica" (click)="emitujVozilo()">
+     <mat-card-title>
+         {{automobil?.marka+ " "+ automobil?.model}}
+     </mat-card-title>
+     <img mat-card-image [src]="Slika()" >
+     <br>
+     <mat-card-subtitle>
+         {{"Registarska oznaka: "+ automobil?.specifikacije}}
+     </mat-card-subtitle>
+     <mat-card-subtitle>
+         {{"Godiste: "+automobil?.godina}}
+     </mat-card-subtitle>
+     <mat-card-subtitle>
+         {{"Cena po danu: "+ automobil?.cena}}
+     </mat-card-subtitle>
+     <mat-card-subtitle *ngIf="!automobil?.radnja">
+         {{"Nije rasporedjeno u nijednoj radnji."}}
+     </mat-card-subtitle>
+     <mat-card-subtitle *ngIf="automobil?.radnja">
+         {{"Radnja: "+ automobil?.radnja?.naziv}}
+     </mat-card-subtitle>
+ </mat-card>

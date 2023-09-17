@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faPiggyBank, faThumbsUp, faWallet, faShield } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { appState } from 'src/app/state/appState';
@@ -13,11 +12,6 @@ import { korisnikState } from 'src/app/state/korisnik/korisnikState';
   styleUrls: ['./pocetna.component.css']
 })
 export class PocetnaComponent implements OnInit {
-  
-  iconPiggy = faPiggyBank;
-  iconLike = faThumbsUp;
-  iconWallet = faWallet;
-  iconShield = faShield;
   constructor(private store:Store<appState>, private router:Router) { }
 
   korisnik: Observable<korisnikState> = this.store.select(korisnikSelektor);
@@ -39,5 +33,4 @@ export class PocetnaComponent implements OnInit {
       }
     })
   }
-
 }

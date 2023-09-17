@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { appState } from 'src/app/state/appState';
-import { loginAdmin } from 'src/app/state/korisnik/korisnik.action';
+import { loginAdmin, validirajAdmina } from 'src/app/state/korisnik/korisnik.action';
 
 @Component({
   selector: 'app-login-admin',
@@ -25,7 +25,7 @@ export class LoginAdminComponent implements OnInit {
     this.store.dispatch(loginAdmin({email: email, lozinka:lozinka}));
     let i = 0;
     this.store.select('korisnikState').subscribe(x=>{
-      if(x.korisnik!= null) this.router.navigateByUrl("/admin")
+      if(x.korisnik != null) this.router.navigateByUrl("/admin")
     })
   }
   ngOnInit(): void {

@@ -1,0 +1,27 @@
+.voziloDetaljnoKontrole {
+     display: flex;
+     justify-content: flex-end;
+     padding: 10px;
+ }
+ 
+ .voziloDetaljnoDashboard {
+     display: flex;
+     justify-content: space-evenly;
+     flex-wrap: wrap;
+     
+ }
+ 
+ .promenaCentra {
+     width: 250px;
+ }
+ 
+ .promena {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin-bottom: 8px;
+ }
+ 
+ .obrisiDugme {
+     width: 100%;
+ }

@@ -33,6 +33,9 @@ import { LoginAdminComponent } from './components/admin/login-admin/login-admin.
 import { PocetnaAdminComponent } from './components/admin/pocetna-admin/pocetna-admin.component';
 import { DodajAutomobilComponent } from './components/admin/dodaj-automobil/dodaj-automobil.component';
 import { AutomobiliComponent } from './components/admin/automobili/automobili.component';
+import { PocetnaDetaljiComponent } from './components/korisnik/pocetna-detalji/pocetna-detalji.component';
+import { AutomobilComponent } from './components/admin/automobil/automobil.component';
+import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/automobil-dodatno.component';
 
 
 @NgModule({
@@ -46,7 +49,7 @@ import { AutomobiliComponent } from './components/admin/automobili/automobili.co
     LoginAdminComponent,
     PocetnaAdminComponent,
     DodajAutomobilComponent, 
-    AutomobiliComponent
+    AutomobiliComponent, PocetnaDetaljiComponent, AutomobilComponent, AutomobilDodatnoComponent
   ],
   imports: [
     BrowserModule,

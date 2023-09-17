@@ -1,0 +1,19 @@
+<div class="voziloDetaljnoKontrole">
+     <button mat-raised-button color="warn" (click)="nazad()">Nazad</button>
+ </div>
+ <div class="voziloDetaljnoDashboard">
+     <div>
+         <app-automobil [automobil]="automobil"></app-automobil>
+         <button mat-raised-button color="warn" class="obrisiDugme" (click)="obrisiVozilo()">Obrisi vozilo</button>
+     </div>
+     
+     <div class="promene">
+         <div></div>
+         <div class="promenaCentra">
+             <mat-card *ngFor="let radnja of radnje" class="promena">
+                 <p>{{radnja.naziv}}</p>
+                 <button mat-raised-button color="accent" (click)="postaviRadnju(radnja)">Promeni</button>
+             </mat-card>
+         </div>
+     </div>
+ </div>

@@ -1,32 +1,33 @@
 <form class="formaKorisnikRegistracija" [formGroup]="registracijaForm">
      <mat-form-field>
-         <input placeholder="ime" matNativeControl formControlName="ime">
+         <input placeholder="Ime" matNativeControl formControlName="ime">
          <mat-error *ngIf="ime?.errors?.['required']">Niste uneli ime</mat-error>
          <mat-error *ngIf="ime?.errors?.['pattern']">Ime ne sme da sadrzi brojeve</mat-error>
      </mat-form-field>
      <mat-form-field>
-         <input placeholder="prezime" matNativeControl formControlName="prezime">
+         <input placeholder="Prezime" matNativeControl formControlName="prezime">
          <mat-error *ngIf="prezime?.errors?.['required']">Niste uneli prezime</mat-error>
          <mat-error *ngIf="prezime?.errors?.['pattern']">Prezime ne sme da sadrzi brojeve</mat-error>
      </mat-form-field>
      <mat-form-field>
-         <input placeholder="email" matNativeControl formControlName="email">
+         <input placeholder="Email" matNativeControl formControlName="email">
          <mat-error *ngIf="email?.errors?.['required']">Mora da unesete email</mat-error>
          <mat-error *ngIf="email?.errors?.['email']">Niste uneli validan email</mat-error>
      </mat-form-field>
      <mat-form-field>
-         <input placeholder="lozinka" type="password" matNativeControl formControlName="lozinka">
+         <input placeholder="Lozinka" type="password" matNativeControl formControlName="lozinka">
          <mat-error *ngIf="lozinka?.errors?.['pattern']">Barem 8 karaktera, veliko slovo , malo slovo, neki simbol</mat-error>
          <mat-error *ngIf="lozinka?.errors?.['required']">Mora da unesete lozinku</mat-error>
      </mat-form-field>
      <mat-form-field>
-         <input placeholder="potvrdi lozinku" type="password" matNativeControl formControlName="ponovljenaLozinka">
+         <input placeholder="Potvrdi lozinku" type="password" matNativeControl formControlName="ponovljenaLozinka">
          <mat-error *ngIf="ponovljenaLozinka?.errors?.['pattern']">Barem 8 karaktera, veliko slovo , malo slovo, neki simbol</mat-error>
          <mat-error *ngIf="ponovljenaLozinka?.errors?.['required']">Mora da ponovite lozinku</mat-error>
      </mat-form-field>
-     
+      
+     <div class="KontroleRegistracija">
+        <button mat-raised-button color="primary" (click)="registrujSe()">Registruj se</button>
+        <a mat-raised-button color="warn" routerLink="../Login">Odustani</a>
+    </div>
  </form>
- <div class="KontroleRegistracija">
-     <button mat-raised-button color="primary" (click)="registrujSe()">Registruj se</button>
-     <a mat-raised-button color="warn" routerLink="../Login">Odustani</a>
- </div>
+

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map, throwError } from 'rxjs';
 import { Korisnik } from '../models/korisnik';
 import { environment } from 'src/environments/environment';
 import { Admin } from '../models/admin';
@@ -34,7 +34,7 @@ export class AutentifikacijaService {
   }
 
   loginAdmin(email: string, lozinka: string) : Observable<Admin> {
-    return this.httpClient.post<Admin>(environment.apiURL+"auth-admin/log-in",{email,lozinka},{withCredentials:true}).pipe(map(x=><Korisnik>x))
+    return this.httpClient.post<Admin>(environment.apiURL+"auth-admin/log-in",{email,lozinka},{withCredentials:true}).pipe(map(x=><Admin>x))
   }
 
   logOutAdmin() {

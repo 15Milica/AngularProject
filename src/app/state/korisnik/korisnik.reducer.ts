@@ -1,5 +1,5 @@
 import { createReducer ,on} from "@ngrx/store"
-import { loginAdminSuccess, loginKorisnikaSuccess, logoutAdminSuccess, logoutKorisnikSuccess, validirajAdminaSuccess, validirajKorisnikaSuccess } from "./korisnik.action";
+import { loginAdminSuccess, loginKorisnikaSuccess, logoutAdminSuccess, logoutKorisnikSuccess, validirajAdminaFail, validirajAdminaSuccess, validirajKorisnikaSuccess } from "./korisnik.action";
 import { korisnikState, TipKorisnika } from "./korisnikState";
 
 
@@ -48,7 +48,7 @@ let korisnikReducer = createReducer(initialState,
         newState.tip = TipKorisnika.ADMIN
         console.log(newState)
         return newState
-    }),
+    })
     );
 
 export default korisnikReducer; 

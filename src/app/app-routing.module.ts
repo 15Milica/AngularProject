@@ -10,6 +10,9 @@ import { LoginAdminComponent } from './components/admin/login-admin/login-admin.
 import { AutomobiliComponent } from './components/admin/automobili/automobili.component';
 import { DodajAutomobilComponent } from './components/admin/dodaj-automobil/dodaj-automobil.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
+import { PocetnaDetaljiComponent } from './components/korisnik/pocetna-detalji/pocetna-detalji.component';
+import { AutomobilComponent } from './components/admin/automobil/automobil.component';
+import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/automobil-dodatno.component';
 
 
 const routes: Routes = [
@@ -20,7 +23,8 @@ const routes: Routes = [
       {path:"Login", component: LoginComponent},
       {path:"Registracija", component: RegistracijaComponent},
       {path:"Radnje", component: RadnjeComponent},
-      {path:"Profil", component: ProfilComponent}
+      {path:"Profil", component: ProfilComponent},
+      {path:"PocetnaDetalji", component: PocetnaDetaljiComponent}
     ]
   },
   {
@@ -28,8 +32,12 @@ const routes: Routes = [
     component: PocetnaAdminComponent,
     children:[
       {path:"Login", component: LoginAdminComponent},
-      {path:"Autmonbili", component: AutomobiliComponent, canActivate:[AuthenticationGuard]},
-      {path:"DodajAutomobil", component: DodajAutomobilComponent, canActivate:[AuthenticationGuard]}
+      {path:"Automobili", component: AutomobiliComponent, canActivate:[AuthenticationGuard],
+       children:[
+        {path:"Automobil", component:AutomobilComponent},
+        {path:"DodajAutomobil", component: DodajAutomobilComponent},
+        {path:"AutomobilDodatno", component:AutomobilDodatnoComponent}
+      ]}
     ]
   }
 ];

@@ -1,1 +1,25 @@
-<p>dodaj-automobil works!</p>
+<form class="dodajVoziloForm" [formGroup]="forma">
+     <mat-form-field>
+          <input matNativeControl placeholder="Marka" formControlName="marka">
+     </mat-form-field>
+     <mat-form-field>
+          <input matNativeControl placeholder="Model" formControlName="model">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="Registarska oznaka" formControlName="specifikacije">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="Godina" formControlName="godina">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="Cena po danu" formControlName="cena">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="SlikaUrl" formControlName="slika">
+     </mat-form-field>
+     <img [src]="SlikaUrl" class="slikaVozila">
+ </form>
+ <div class="DodajVoziloKontrole">
+     <button mat-raised-button color="primary" (click)="dodajVozilo()">Dodaj</button>
+     <button mat-raised-button color="accent" (click)="reset()">Osveži</button>
+ </div>

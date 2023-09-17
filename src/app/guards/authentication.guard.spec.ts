@@ -5,12 +5,12 @@ import { AuthenticationGuard } from './authentication.guard';
 describe('AuthenticationGuard', () => {
   let guard: AuthenticationGuard;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     TestBed.configureTestingModule({});
     guard = TestBed.inject(AuthenticationGuard);
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(guard).toBeTruthy();
   });
 });
