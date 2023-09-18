@@ -17,17 +17,21 @@ export class IznajmljivanjeService {
   }
 
   zavrsiIznajmljivanje(id: number) {
-    return this.httpClient.put<void>(environment.apiURL+"iznajmljivanje/Zavrsi/"+id,null,{withCredentials:true})
+    return this.httpClient.put<Iznajmljivanje>(environment.apiURL+"iznajmljivanje/Zavrsi/"+id,null,{withCredentials:true})
   }
 
   dodajIznajmljivanje(idAutomobila:number, idKorisnika: number, datum: Date, dana: number) {
     let podaci = {
      datum: datum,
      dana: dana,
-     korisnik: idKorisnika,
-     automobil: idAutomobila
+     korisnikId: idKorisnika,
+     automobilId: idAutomobila
     }
     return this.httpClient.post<Iznajmljivanje>(environment.apiURL+"iznajmljivanje/Dodaj",podaci,{withCredentials:true})
+  }
+
+  obrisi(id:number) {
+    return this.httpClient.delete(environment.apiURL+"iznajmljivanje/Izbrisi/"+id,{withCredentials:true,responseType:"text"})
   }
 }
 

@@ -6,6 +6,6 @@ export interface Iznajmljivanje{
      datum: Date,
      dana: number,
      zavrseno: boolean,
-     vozilo:string,
+     automobil:string,
      cenaUkupna: number
 }

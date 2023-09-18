@@ -14,24 +14,15 @@ import { radnjeSelector } from 'src/app/state/radnje/radnje.selector';
 })
 export class RadnjeComponent implements OnInit {
 
-  constructor(private store: Store<appState>, private radnjaService: RadnjaService) { }
+  constructor(private radnjaService: RadnjaService) { }
 
-  radnje: Observable<Radnja[]> = of([]);
-  r:Radnja[] = []
+  radnje: Radnja[] = [];
   izabranaRadnja: Radnja | null = null;
 
   ngOnInit(): void {
-    this.store.select(radnjeSelector).subscribe(x=>{
-      if(x.length == 0) {
-        this.store.dispatch(ucitajRadnje())
-      }
-    }
-    )
     this.radnjaService.preuzmiRadnje().subscribe(x=>{
-      this.r = x
+      this.radnje = x
     })
-    
-    this.radnje = this.store.select(radnjeSelector)
   }
   postaviRadnju(radnja:Radnja){
     this.izabranaRadnja = radnja

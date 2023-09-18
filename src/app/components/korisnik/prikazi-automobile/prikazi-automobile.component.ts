@@ -17,6 +17,11 @@ export class PrikaziAutomobileComponent implements OnInit {
   constructor(private radnjaService: RadnjaService, private automobilService: AutomobilService) { }
 
   ngOnInit(): void {
+    if(this.radnja == null){
+      this.automobilService.preuzmiSveAutomobile().subscribe(x=>{
+        this.automobili = x;
+      })
+    }
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['radnja'] && this.radnja) {

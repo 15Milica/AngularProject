@@ -1,0 +1,15 @@
+.hIznajmljivanja {
+     margin-top: 10px;
+     text-align: center;
+ }
+ 
+ .iznajmljivanje {
+     width: 90%;
+     margin: 10px auto;
+ }
+ .buttonIznajmi{
+    text-align: end;
+ }
+ .buttonIznajmi button{
+    margin: 4px;
+ }

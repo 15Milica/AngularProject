@@ -1,4 +1,4 @@
 <div class="radnje">
-     <app-radnja (Emitter)="postaviRadnju($event)" [radnja]="radnja" *ngFor="let radnja of r"></app-radnja>
+     <app-radnja (Emitter)="postaviRadnju($event)" [radnja]="radnja" *ngFor="let radnja of radnje"></app-radnja>
 </div>
 <app-prikazi-automobile *ngIf="izabranaRadnja" [radnja]="izabranaRadnja"></app-prikazi-automobile>

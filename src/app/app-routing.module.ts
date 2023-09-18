@@ -14,6 +14,7 @@ import { PocetnaDetaljiComponent } from './components/korisnik/pocetna-detalji/p
 import { AutomobilComponent } from './components/admin/automobil/automobil.component';
 import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/automobil-dodatno.component';
 import { DodajRadnjuComponent } from './components/admin/dodaj-radnju/dodaj-radnju.component';
+import { PrikaziAutomobileComponent } from './components/korisnik/prikazi-automobile/prikazi-automobile.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
       {path:"Registracija", component: RegistracijaComponent},
       {path:"Radnje", component: RadnjeComponent},
       {path:"Profil", component: ProfilComponent},
-      {path:"PocetnaDetalji", component: PocetnaDetaljiComponent}
+      {path:"PocetnaDetalji", component: PocetnaDetaljiComponent},
+      {path:"Automobili", component: PrikaziAutomobileComponent}
     ]
   },
   {

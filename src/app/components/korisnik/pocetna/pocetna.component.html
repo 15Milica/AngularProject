@@ -3,6 +3,7 @@
      <h1>MSRent</h1>
      <button mat-button color="white" routerLink="PocetnaDetalji" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Početna</button>
      <button mat-button color="white" routerLink="Radnje" routerLinkActive="active">Radnje</button>
+     <button mat-button color="white" routerLink="Automobili" routerLinkActive="active">Automobili</button>
      <button mat-button color="white" routerLink="Profil" routerLinkActive="active" *ngIf="logedin">Profil</button>
      <button mat-button color="white" routerLink="Login" routerLinkActive="active" *ngIf="!logedin">Login</button>
      <button mat-button color="white" *ngIf="logedin" (click) = "logout()">Logout</button>

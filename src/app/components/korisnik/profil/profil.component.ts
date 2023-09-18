@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
+import { Observable, of, map, take} from 'rxjs';
 import { Iznajmljivanje } from 'src/app/models/iznajmljivanje';
 import { IznajmljivanjeService } from 'src/app/services/iznajmljivanje.service';
 import { appState } from 'src/app/state/appState';
@@ -21,11 +21,11 @@ export class ProfilComponent implements OnInit {
               .subscribe(x=>{
                 if(x.korisnik)
                   this.iznajmljivanja = this.iznajmljivanjeService.preuzmiIznajmljivanjaKorisnika(x.korisnik?.id)
-              })
-    
+              })  
   }
 
   iznajmljivanja : Observable<Iznajmljivanje[]> = of([])
+  postoji: boolean = true;
 
   rokZaVracanje(iznajmljivanje: Iznajmljivanje) {
     let datum = new Date(iznajmljivanje.datum)
@@ -48,5 +48,16 @@ export class ProfilComponent implements OnInit {
 
   logout(){
     this.store.dispatch(logoutKorisnik());
+  }
+  zavrsi(iznajmljivanje: Iznajmljivanje){
+    this.iznajmljivanjeService.zavrsiIznajmljivanje(iznajmljivanje.id).subscribe(x=>{
+      iznajmljivanje.zavrseno = true;
+    })
+  }
+  obrisi(iznajmljivanje: Iznajmljivanje){
+    this.iznajmljivanjeService.obrisi(iznajmljivanje.id).subscribe(x=>{
+       alert("Izbrisali ste iznajmljivanje")
+       this.postoji = false;
+    })
   }
 }

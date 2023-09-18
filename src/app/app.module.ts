@@ -41,6 +41,9 @@ import { DodajRadnjuComponent } from './components/admin/dodaj-radnju/dodaj-radn
 import { AutomobilKarticaComponent } from './components/korisnik/automobil-kartica/automobil-kartica.component';
 import { PrikaziAutomobileComponent } from './components/korisnik/prikazi-automobile/prikazi-automobile.component';
 import { RadnjaComponent } from './components/korisnik/radnja/radnja.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 
 @NgModule({
@@ -69,6 +72,9 @@ import { RadnjaComponent } from './components/korisnik/radnja/radnja.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,5 +13,25 @@
          <span>{{"Lajkovano "+ brojLajkova +" puta."}}</span>
          <button mat-raised-button color="primary" *ngIf="imaKorisnika" (click)="lajkuj()">Like</button>
          <button mat-raised-button color="warn" *ngIf="imaKorisnika" (click)="dislike()">Dislike</button>
+         <button mat-raised-button color="primary" *ngIf="imaKorisnika" (click)="iznajmiAutomobil()">Iznajmi</button>
      </div>
+
+     <form class="formaIznajmljivanje" *ngIf="iznajmi" [formGroup]="iznajmiForm">
+        <mat-form-field>
+          <input placeholder="Dani" matNativeControl formControlName="dani" type="number">
+          <mat-error *ngIf="dani?.hasError('required')">Morate uneti broj dana</mat-error>
+          <mat-error *ngIf="dani?.hasError('min')">Dani moraju biti veći od 0</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input placeholder="Datum" matNativeControl formControlName="datum" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="datum?.hasError('required')">Morate uneti datum</mat-error>
+        </mat-form-field>
+        <div class="buttonIznajmi">
+          <button mat-raised-button color="primary" (click)="submitForm()">Dodaj</button>
+          <button mat-raised-button color="warn" (click)="goBack()">Nazad</button>
+        </div>
+      </form>
+
  </mat-card>
