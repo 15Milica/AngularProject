@@ -1,0 +1,19 @@
+<form class="dodajRadnjuForm" [formGroup]="forma">
+     <mat-form-field>
+          <input matNativeControl placeholder="Naziv" formControlName="naziv">
+     </mat-form-field>
+     <mat-form-field>
+          <input matNativeControl placeholder="Adresa" formControlName="adresa">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="Telefon" formControlName="telefon">
+     </mat-form-field>
+     <mat-form-field>
+         <input matNativeControl placeholder="SlikaUrl" formControlName="slika">
+     </mat-form-field>
+     <img [src]="SlikaUrl" class="slikaRadnje">
+ </form>
+ <div class="DodajRadnjuKontrole">
+     <button mat-raised-button color="primary" (click)="dodajRadnju()">Dodaj</button>
+     <button mat-raised-button color="accent" (click)="reset()">Osveži</button>
+ </div>

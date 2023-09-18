@@ -7,6 +7,7 @@ import { RadnjaService } from 'src/app/services/radnja.service';
 import { appState } from 'src/app/state/appState';
 import { ucitajRadnje } from 'src/app/state/radnje/radnje.action';
 import { radnjeSelector } from 'src/app/state/radnje/radnje.selector';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-automobil-dodatno',
@@ -15,7 +16,12 @@ import { radnjeSelector } from 'src/app/state/radnje/radnje.selector';
 })
 export class AutomobilDodatnoComponent implements OnInit {
 
-  constructor(private store: Store<appState>, private radnjaService: RadnjaService, private automobilService: AutomobilService) { }
+  radnje: Radnja[] = []
+  @Input() automobil: Automobil | null = null;
+  @Output() Emiter: EventEmitter<null> = new EventEmitter();
+  @Output() EmiterObrisi: EventEmitter<number> = new EventEmitter();
+
+  constructor(private store: Store<appState>, private radnjaService: RadnjaService, private automobilService: AutomobilService, private domSanitazer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.store.select(radnjeSelector).subscribe(x=>{
@@ -23,12 +29,6 @@ export class AutomobilDodatnoComponent implements OnInit {
       this.radnje = x;
     })
   }
-
-  radnje: Radnja[] = []
-
-  @Input() automobil: Automobil | null = null;
-  @Output() Emiter: EventEmitter<null> = new EventEmitter();
-  @Output() EmiterObrisi: EventEmitter<number> = new EventEmitter();
 
   nazad() {
     this.Emiter.emit(null)
@@ -49,4 +49,11 @@ export class AutomobilDodatnoComponent implements OnInit {
       if(this.automobil)this.automobil.radnja = radnja
     })
   }
+  Slika(radnja: Radnja): SafeUrl | string {
+    if (radnja && radnja.slika) {
+      return this.domSanitazer.bypassSecurityTrustResourceUrl(radnja.slika);
+    }
+    return "";
+  }
+  
 }

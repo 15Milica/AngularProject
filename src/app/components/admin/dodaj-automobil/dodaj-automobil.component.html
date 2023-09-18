@@ -1,4 +1,4 @@
-<form class="dodajVoziloForm" [formGroup]="forma">
+<form class="dodajAutomobilForm" [formGroup]="forma">
      <mat-form-field>
           <input matNativeControl placeholder="Marka" formControlName="marka">
      </mat-form-field>
@@ -17,9 +17,9 @@
      <mat-form-field>
          <input matNativeControl placeholder="SlikaUrl" formControlName="slika">
      </mat-form-field>
-     <img [src]="SlikaUrl" class="slikaVozila">
+     <img [src]="SlikaUrl" class="slikaAutomobila">
  </form>
- <div class="DodajVoziloKontrole">
+ <div class="DodajAutomobilKontrole">
      <button mat-raised-button color="primary" (click)="dodajVozilo()">Dodaj</button>
      <button mat-raised-button color="accent" (click)="reset()">Osveži</button>
  </div>

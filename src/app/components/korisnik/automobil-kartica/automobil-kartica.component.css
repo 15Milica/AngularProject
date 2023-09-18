@@ -1,0 +1,24 @@
+.Lajkovi {
+     margin-top: 20px;
+ }
+ 
+ .Lajkovi button {
+     margin: 0 10px
+ }
+ 
+ .DetaljnoVoziloKorisnik {
+     width: 90vw;
+     max-width: 400px;
+     margin: 20px auto;
+ }
+ 
+ .CenaPoDanuPrikaz {
+     background-color: rgb(9, 9, 80);
+     color: white;
+     font-size: 20px;
+     padding: 5px;
+     border-radius: 2px;
+ }
+ .Slike{
+    height: 200px;
+ }

@@ -16,7 +16,6 @@ export class AutomobilComponent implements OnInit {
   constructor(private domSanitazer: DomSanitizer) { }
 
   ngOnInit(): void {
-    console.log(this.automobil)
     if(this.automobil?.slike)
     this.slika = this.automobil?.slike[0]
   }

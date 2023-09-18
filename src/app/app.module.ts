@@ -36,6 +36,11 @@ import { AutomobiliComponent } from './components/admin/automobili/automobili.co
 import { PocetnaDetaljiComponent } from './components/korisnik/pocetna-detalji/pocetna-detalji.component';
 import { AutomobilComponent } from './components/admin/automobil/automobil.component';
 import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/automobil-dodatno.component';
+import { MatSelectModule } from '@angular/material/select';
+import { DodajRadnjuComponent } from './components/admin/dodaj-radnju/dodaj-radnju.component';
+import { AutomobilKarticaComponent } from './components/korisnik/automobil-kartica/automobil-kartica.component';
+import { PrikaziAutomobileComponent } from './components/korisnik/prikazi-automobile/prikazi-automobile.component';
+import { RadnjaComponent } from './components/korisnik/radnja/radnja.component';
 
 
 @NgModule({
@@ -49,7 +54,7 @@ import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/
     LoginAdminComponent,
     PocetnaAdminComponent,
     DodajAutomobilComponent, 
-    AutomobiliComponent, PocetnaDetaljiComponent, AutomobilComponent, AutomobilDodatnoComponent
+    AutomobiliComponent, PocetnaDetaljiComponent, AutomobilComponent, AutomobilDodatnoComponent, DodajRadnjuComponent, AutomobilKarticaComponent, PrikaziAutomobileComponent, RadnjaComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +67,8 @@ import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

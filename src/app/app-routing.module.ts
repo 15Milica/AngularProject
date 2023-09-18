@@ -13,6 +13,7 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 import { PocetnaDetaljiComponent } from './components/korisnik/pocetna-detalji/pocetna-detalji.component';
 import { AutomobilComponent } from './components/admin/automobil/automobil.component';
 import { AutomobilDodatnoComponent } from './components/admin/automobil-dodatno/automobil-dodatno.component';
+import { DodajRadnjuComponent } from './components/admin/dodaj-radnju/dodaj-radnju.component';
 
 
 const routes: Routes = [
@@ -31,11 +32,12 @@ const routes: Routes = [
     path:"admin",
     component: PocetnaAdminComponent,
     children:[
-      {path:"Login", component: LoginAdminComponent},
+      {path:"Login", component: LoginAdminComponent}, 
+      {path:"DodajAutomobil", component: DodajAutomobilComponent, canActivate:[AuthenticationGuard]},
+      {path:"DodajRadnju", component: DodajRadnjuComponent, canActivate:[AuthenticationGuard]},
       {path:"Automobili", component: AutomobiliComponent, canActivate:[AuthenticationGuard],
        children:[
         {path:"Automobil", component:AutomobilComponent},
-        {path:"DodajAutomobil", component: DodajAutomobilComponent},
         {path:"AutomobilDodatno", component:AutomobilDodatnoComponent}
       ]}
     ]

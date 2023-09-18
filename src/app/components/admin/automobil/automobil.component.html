@@ -2,16 +2,16 @@
      <mat-card-title>
          {{automobil?.marka+ " "+ automobil?.model}}
      </mat-card-title>
-     <img mat-card-image [src]="Slika()" >
+     <img mat-card-image class="slika" [src]="Slika()" >
      <br>
      <mat-card-subtitle>
-         {{"Registarska oznaka: "+ automobil?.specifikacije}}
+         {{"Oznaka: "+ automobil?.specifikacije}}
      </mat-card-subtitle>
      <mat-card-subtitle>
          {{"Godiste: "+automobil?.godina}}
      </mat-card-subtitle>
      <mat-card-subtitle>
-         {{"Cena po danu: "+ automobil?.cena}}
+         {{"Cena po danu: " + automobil?.cena + "e"}}
      </mat-card-subtitle>
      <mat-card-subtitle *ngIf="!automobil?.radnja">
          {{"Nije rasporedjeno u nijednoj radnji."}}

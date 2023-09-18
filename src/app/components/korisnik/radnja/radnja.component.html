@@ -1,0 +1,6 @@
+<mat-card *ngIf="radnja" (click)="emitujRadnju()" class="radnja">
+     <mat-card-title>{{radnja.naziv}}</mat-card-title>
+     <img mat-card-image class ="slika" [src]="radnja.slika">
+     <mat-card-subtitle>{{"Adresa: "+radnja.adresa}}</mat-card-subtitle>
+     <mat-card-subtitle>{{"Broj telefona: " + radnja.telefon}}</mat-card-subtitle>
+ </mat-card>

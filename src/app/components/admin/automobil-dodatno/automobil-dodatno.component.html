@@ -1,18 +1,21 @@
-<div class="voziloDetaljnoKontrole">
-     <button mat-raised-button color="warn" (click)="nazad()">Nazad</button>
+<div class="automobilDetaljnoKontrole">
+     <button mat-raised-button color="primary" (click)="nazad()">Nazad</button>
  </div>
- <div class="voziloDetaljnoDashboard">
+ <div class="automobilDetaljnoDashboard">
      <div>
          <app-automobil [automobil]="automobil"></app-automobil>
-         <button mat-raised-button color="warn" class="obrisiDugme" (click)="obrisiVozilo()">Obrisi vozilo</button>
+         <button mat-raised-button color="warn" class="obrisiDugme" (click)="obrisiVozilo()">Obriši automobil</button>
      </div>
      
      <div class="promene">
          <div></div>
-         <div class="promenaCentra">
+         <div class="promenaRadnje">
              <mat-card *ngFor="let radnja of radnje" class="promena">
-                 <p>{{radnja.naziv}}</p>
-                 <button mat-raised-button color="accent" (click)="postaviRadnju(radnja)">Promeni</button>
+                <mat-card-title>{{radnja.naziv}}</mat-card-title>
+                <img mat-card-image class ="slika" [src]="Slika(radnja)" >
+                <mat-card-subtitle>{{"Adresa: "+radnja.adresa}}</mat-card-subtitle>
+                <mat-card-subtitle>{{"Telefon: "+radnja.telefon}}</mat-card-subtitle>
+                <button mat-raised-button color="primary" (click)="postaviRadnju(radnja)">Promeni</button>
              </mat-card>
          </div>
      </div>

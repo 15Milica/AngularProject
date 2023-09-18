@@ -21,9 +21,7 @@ export class AutomobiliComponent implements OnInit {
   ngOnInit(): void {
     this.autmobilService.preuzmiSveAutomobile().subscribe(x=>{
       this.automobili = x;
-      console.log(this.automobili)
     })
-    console.log(this.izabraniAutomobil)
   }
 
   postaviAutomobil(automobil: Automobil | null) {

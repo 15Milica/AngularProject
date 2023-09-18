@@ -16,14 +16,14 @@ export class AutomobilService {
   }
 
   automobilLajkovi(id:number) {
-    return this.httpClient.get<number>(environment.apiURL+`like/LikoviVozila/${id}`)
+    return this.httpClient.get<number>(environment.apiURL+`like/AutomobilLike/${id}`)
   }
 
   preuzmiLike(idKorisnika: number, idAutomobila: number){
     return this.httpClient.get<number>(environment.apiURL+`like/KorisnikLikeAutomobil/${idKorisnika}/${idAutomobila}`,{withCredentials:true})
   }
   
-  lajkuj(idKorisnika: number, idAutomobila: number){
+  lajkuj(idAutomobila: number, idKorisnika: number){
     return this.httpClient.post<number>(environment.apiURL+"like/DodajLike/"+idAutomobila+"/"+idKorisnika,null,{withCredentials:true}).pipe(map(x=><number>x))
   }
 

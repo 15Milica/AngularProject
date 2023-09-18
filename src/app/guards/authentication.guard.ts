@@ -19,7 +19,7 @@ export class AuthenticationGuard implements CanActivate {
         debounceTime(200),
         map((x) => {
           if (x.korisnik && x.tip === TipKorisnika.ADMIN) {
-            if (state.url === '/admin/Automobili') {
+            if (state.url === '/admin/Automobili' || state.url === '/admin/DodajAutomobil' || state.url === '/admin/DodajRadnju') {
               return true;
             }
             return this.router.createUrlTree(['/admin']);

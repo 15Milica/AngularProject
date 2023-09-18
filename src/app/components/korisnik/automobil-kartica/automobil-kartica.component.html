@@ -1,0 +1,17 @@
+<mat-card  *ngIf="automobil" class="DetaljnoVoziloKorisnik">
+     <mat-card-title>{{automobil.marka+ " "+ automobil.model}}</mat-card-title>
+     <mat-card-subtitle>{{"Oznaka: "+ automobil.specifikacije}}</mat-card-subtitle>
+     <mat-card-subtitle>{{"Godina prozivodjne: "+automobil.godina}}</mat-card-subtitle>
+     <mat-card-subtitle *ngIf="automobil.radnja">Nalazi se u radnji: <a routerLink="/Radnje">{{automobil.radnja.naziv}}</a></mat-card-subtitle>
+     <mat-card-subtitle *ngIf="!automobil.radnja">Automobil jos uvek nije rasporedjen u nekoj radnji.</mat-card-subtitle>
+     <mat-card-subtitle><span class="CenaPoDanuPrikaz">{{"Cena po danu: "+ automobil.cena +"e"}}</span></mat-card-subtitle>
+     <br>
+     <div>
+         <img mat-card-image class="Slike" *ngFor="let slika of automobil.slike" [src]="sanitizeUlr(slika.url)"/>
+     </div>
+     <div class="Lajkovi" *ngIf="automobil.radnja">
+         <span>{{"Lajkovano "+ brojLajkova +" puta."}}</span>
+         <button mat-raised-button color="primary" *ngIf="imaKorisnika" (click)="lajkuj()">Like</button>
+         <button mat-raised-button color="warn" *ngIf="imaKorisnika" (click)="dislike()">Dislike</button>
+     </div>
+ </mat-card>

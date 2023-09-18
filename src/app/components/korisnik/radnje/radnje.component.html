@@ -1,8 +1,4 @@
 <div class="radnje">
-     <mat-card *ngFor="let radnja of radnje | async" class="radnja">
-         <mat-card-title>{{radnja.naziv}}</mat-card-title>
-         <img mat-card-image [src]="radnja.slika">
-         <mat-card-subtitle>{{"Adresa: "+radnja.adresa}}</mat-card-subtitle>
-         <mat-card-subtitle>{{"Broj telefona: " + radnja.telefon}}</mat-card-subtitle>
-     </mat-card>
- </div>
+     <app-radnja (Emitter)="postaviRadnju($event)" [radnja]="radnja" *ngFor="let radnja of r"></app-radnja>
+</div>
+<app-prikazi-automobile *ngIf="izabranaRadnja" [radnja]="izabranaRadnja"></app-prikazi-automobile>

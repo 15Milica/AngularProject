@@ -1,22 +1,23 @@
-.voziloDetaljnoKontrole {
+.automobilDetaljnoKontrole {
      display: flex;
      justify-content: flex-end;
      padding: 10px;
  }
  
- .voziloDetaljnoDashboard {
+ .automobilDetaljnoDashboard {
      display: flex;
      justify-content: space-evenly;
-     flex-wrap: wrap;
-     
+     flex-wrap: wrap;   
  }
  
- .promenaCentra {
+ .promenaRadnje {
      width: 250px;
+     margin: 10px;
  }
  
  .promena {
      display: flex;
+     flex-direction: column;
      align-items: center;
      justify-content: space-around;
      margin-bottom: 8px;
@@ -24,4 +25,7 @@
  
  .obrisiDugme {
      width: 100%;
+ }
+ .slika{
+    height: 150px;
  }

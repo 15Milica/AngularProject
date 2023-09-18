@@ -34,5 +34,8 @@ export class PocetnaAdminComponent implements OnInit {
       }
     })
   }
+  navigate(route: string) {
+    this.router.navigateByUrl(route);
+  }
 
 }

@@ -1,4 +1,4 @@
-<div class="pretragaVozilaRadnik" *ngIf="!izabraniAutomobil"> 
+<div class="automobiliAdmin" *ngIf="!izabraniAutomobil"> 
      <app-automobil (Emitter)="postaviAutomobil($event)" [automobil]="automobil" *ngFor="let automobil of automobili"></app-automobil>
 </div>
 <app-automobil-dodatno *ngIf="izabraniAutomobil" [automobil]="izabraniAutomobil" (EmiterObrisi)="deleteHandler($event)" (Emiter)="postaviAutomobil($event)"></app-automobil-dodatno>
